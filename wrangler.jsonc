@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "paharico-orders-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "DBD1Database",
+          "database_id": "e8fe6467-7646-46a6-a9e9-fad747fdb03f"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "2797eefe3b694f7ebc2b2afba42ccd71",
+            "binding": "SECRET",
+            "secret_name": "DATABASE_AUTH_TOKEN"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
